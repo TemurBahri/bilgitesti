@@ -30,8 +30,6 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
 
   TestVeri test_1 = TestVeri();
 
-  int soruIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -44,7 +42,7 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                test_1.soruBankasi[soruIndex].soruMetni,
+                test_1.getSoruMetni(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20.0,
@@ -78,13 +76,12 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
                           ),
                           onPressed: () {
                             setState(() {
-                              if (test_1.soruBankasi[soruIndex].soruYaniti ==
-                                  false) {
+                              if (test_1.getSoruYaniti() == false) {
                                 secimler.add(kDogruIcon);
                               } else {
                                 secimler.add(kYanlisIcon);
                               }
-                              soruIndex++;
+                              test_1.sonrakiSoru();
                               //secimler.add(kYanlisIcon);
                             });
                           },
@@ -99,13 +96,12 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
                           child: Icon(Icons.thumb_up, size: 30.0),
                           onPressed: () {
                             setState(() {
-                              if (test_1.soruBankasi[soruIndex].soruYaniti ==
-                                  true) {
+                              if (test_1.getSoruYaniti() == true) {
                                 secimler.add(kDogruIcon);
                               } else {
                                 secimler.add(kYanlisIcon);
                               }
-                              soruIndex++;
+                              test_1.sonrakiSoru();
                               //secimler.add(kYanlisIcon);
                             });
                           },

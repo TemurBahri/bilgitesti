@@ -1,7 +1,8 @@
 import 'package:bilgitesti/soru.dart';
 
 class TestVeri {
-  List<Soru> soruBankasi = [
+  int _soruIndex = 0;
+  List<Soru> _soruBankasi = [
     Soru(
         soruMetni: '1.Titanic gelmiş geçmiş en büyük gemidir',
         soruYaniti: false),
@@ -18,4 +19,18 @@ class TestVeri {
         soruYaniti: true),
     Soru(soruMetni: '7.Fransızlar 80 demek için, 4 - 20 der', soruYaniti: true)
   ];
+
+  String getSoruMetni() {
+    return _soruBankasi[_soruIndex].soruMetni;
+  }
+
+  bool getSoruYaniti() {
+    return _soruBankasi[_soruIndex].soruYaniti;
+  }
+
+  void sonrakiSoru() {
+    if (_soruIndex + 1 < _soruBankasi.length) {
+      _soruIndex++;
+    }
+  }
 }
