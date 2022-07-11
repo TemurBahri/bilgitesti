@@ -34,3 +34,16 @@ class TestVeri {
     }
   }
 }
+
+class RandomTestData extends TestVeri {
+  int _soruIndex = 5;
+  @override
+  void sonrakiSoru() {
+    /*
+    if (_soruIndex + 1 < _soruBankasi.length) {
+      _soruIndex++;
+    }
+
+     */
+  }
+}

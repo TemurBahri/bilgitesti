@@ -28,7 +28,7 @@ class SoruSayfasi extends StatefulWidget {
 class _SoruSayfasiState extends State<SoruSayfasi> {
   List<Widget> secimler = [];
 
-  TestVeri test_1 = TestVeri();
+  TestVeri test_1 = RandomTestData();
 
   @override
   Widget build(BuildContext context) {
